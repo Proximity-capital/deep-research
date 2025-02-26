@@ -27,7 +27,7 @@ app.post("/chat/", async (req: Request, res:Response) => {
         let session = chatSessions.get(sessionId);
 
         if (!session) {
-            // **Step 1: Start a new session and get the follow-up questions**
+            //Start a new session, define breath, depth and get the follow-up questions**
             const followUps = await generateFeedback(query);
             chatSessions.set(sessionId, { query, followUps, answers: [] });
 
